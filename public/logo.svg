@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Deutschify icon">
+    <defs>
+        <!-- German-flag inspired gradient (black -> red -> gold) -->
+        <linearGradient id="deStripe" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="#101010"/>
+            <stop offset="48%" stop-color="#C1121F"/>
+            <stop offset="100%" stop-color="#F6C445"/>
+        </linearGradient>
+
+        <!-- Soft shadow -->
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+        </filter>
+
+        <!-- Gloss highlight -->
+        <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+            <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Metal-ish note head -->
+        <radialGradient id="noteHead" cx="35%" cy="30%" r="80%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+            <stop offset="35%" stop-color="#2A2A2A"/>
+            <stop offset="100%" stop-color="#0A0A0A"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Icon group (no background square; just the mark) -->
+    <g filter="url(#shadow)">
+        <!-- Diagonal flag stripe behind the note -->
+        <path d="M64 310 C140 250, 210 210, 292 178 C357 152, 414 142, 448 140
+             L448 220 C405 226, 351 244, 290 270 C211 303, 145 342, 64 404 Z"
+              fill="url(#deStripe)" opacity="0.95"/>
+
+        <!-- Musical note stem + flag -->
+        <path d="M292 96
+             C292 86, 300 78, 310 78
+             H352
+             C382 78, 404 96, 404 124
+             V250
+             C404 260, 396 268, 386 268
+             H330
+             C320 268, 312 260, 312 250
+             V152
+             H318
+             C340 152, 356 142, 356 124
+             V120
+             H324
+             V250
+             C324 266, 311 279, 295 279
+             C279 279, 266 266, 266 250
+             V118
+             C266 106, 275 96, 292 96 Z"
+              fill="url(#deStripe)"/>
+
+        <!-- Note head (left) -->
+        <ellipse cx="214" cy="316" rx="58" ry="44" fill="url(#noteHead)"/>
+        <ellipse cx="214" cy="316" rx="58" ry="44" fill="#000000" opacity="0.10"/>
+
+        <!-- Note head (right / small) -->
+        <ellipse cx="366" cy="286" rx="28" ry="22" fill="#F6C445" opacity="0.95"/>
+        <ellipse cx="366" cy="286" rx="28" ry="22" fill="#000000" opacity="0.12"/>
+
+        <!-- Stem connecting to left head -->
+        <path d="M250 120
+             C250 108, 260 98, 272 98
+             C284 98, 294 108, 294 120
+             V282
+             C294 306, 275 326, 251 330
+             C238 332, 225 332, 210 332
+             C197 332, 184 330, 174 326
+             C163 322, 156 314, 156 306
+             C156 292, 170 280, 194 272
+             C216 264, 245 265, 268 272
+             V120 Z"
+              fill="#000000" opacity="0.18"/>
+
+        <!-- Equalizer bars -->
+        <g transform="translate(292 332)">
+            <rect x="-94" y="44" width="20" height="44" rx="8" fill="#101010" opacity="0.95"/>
+            <rect x="-68" y="26" width="20" height="62" rx="8" fill="#C1121F" opacity="0.95"/>
+            <rect x="-42" y="8"  width="20" height="80" rx="8" fill="#F6C445" opacity="0.98"/>
+            <rect x="-16" y="30" width="20" height="58" rx="8" fill="#C1121F" opacity="0.95"/>
+            <rect x="10"  y="52" width="20" height="36" rx="8" fill="#101010" opacity="0.95"/>
+        </g>
+
+        <!-- Small sparkles -->
+        <g opacity="0.75">
+            <path d="M420 120 l8 6 -8 6 -6 8 -6-8 -8-6 8-6 6-8z" fill="#FFFFFF" opacity="0.55"/>
+            <path d="M104 382 l6 4 -6 4 -4 6 -4-6 -6-4 6-4 4-6z" fill="#FFFFFF" opacity="0.40"/>
+        </g>
+
+        <!-- Gloss highlight on top portion -->
+        <path d="M92 240
+             C175 170, 260 130, 448 110
+             L448 152
+             C295 170, 220 204, 128 268
+             C112 278, 98 290, 84 302
+             C76 309, 66 302, 70 292
+             C74 279, 80 260, 92 240 Z"
+              fill="url(#gloss)"/>
+    </g>
+</svg>
