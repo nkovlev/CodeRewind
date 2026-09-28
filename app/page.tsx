@@ -1,11 +1,12 @@
 import Greeting from "@/modules/greeting";
+import React from "react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black font-sans ">
-      <main className="flex h-full w-full items-center justify-start px-32 sm:items-start">
-       <Greeting />
-      </main>
+    <div className="flex flex-col h-screen w-screen bg-background font-sans">
+            <main>
+                <Greeting />
+            </main>
     </div>
   );
 }
