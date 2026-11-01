@@ -3,6 +3,7 @@ import "./globals.css";
 import React from "react";
 import StoreProvider from "@/components/storeProvider";
 import Header from "@/layout/Header";
+import {AuroraBackground} from "@/components/background";
 
 
 export const metadata: Metadata = {
@@ -17,14 +18,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={"bg-background px-40 py-4"}>
-            <StoreProvider>
-                <Header />
-                <main>
-                    {children}
-                </main>
-            </StoreProvider>
-            </body>
+        <body>
+        <AuroraBackground />
+        <StoreProvider>
+            <Header />
+            <main>
+                {children}
+            </main>
+        </StoreProvider>
+        </body>
         </html>
-    );
-}
+    )}

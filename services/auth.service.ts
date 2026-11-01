@@ -27,13 +27,12 @@ export const loginWithGithub = async () => {
         photoURL: result.user.photoURL,
     };
 
-    // Запросы независимы, поэтому выполняем параллельно
     const [githubUser, repositories] = await Promise.all([
         getGithubUser(githubToken),
         getRepositories(githubToken),
     ]);
 
-    return { user, githubUser, repositories };
+    return { user, githubUser, repositories, githubToken };
 };
 
 export const logout = async () => {
