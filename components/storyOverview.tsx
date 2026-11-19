@@ -14,11 +14,17 @@ interface StoryOverviewProps {
     id: string;
     repositoryName: string;
     description: string;
-    languages: Object;
+    languages: LanguageStat[];
     stars: number;
     contributors: number;
     commits: number;
     months: number;
+}
+
+interface LanguageStat {
+    language: string;
+    bytes: number;
+    percent: number;
 }
 
 interface BadgesProps {
