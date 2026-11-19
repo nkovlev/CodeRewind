@@ -6,6 +6,7 @@ import type { RootState } from "@/store/store";
 import { FaArrowRight } from "react-icons/fa";
 import {FaGithub} from "react-icons/fa6";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Repositories = () => {
     const repositories = useSelector(
@@ -27,30 +28,35 @@ const Repositories = () => {
             <div className="w-full flex flex-col items-center">
                 <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 ">
                     {repositories?.map((repo) => (
-                        <Link
+                        <motion.div
                             key={repo.id}
-                            className={`w-[276px] h-[148px] flex flex-col gap-6 rounded-lg  p-3  border-2 ${isHovered === repo.id ? 'border-primary-hover bg-primary-hover/10' : 'border-border bg-card/85'}`}
-                            onMouseEnter={() => setIsHovered(repo.id)}
-                            onMouseLeave={() => setIsHovered(null)}
-                            href={`/story/${repo.id}`}
+                            whileHover={{ y: -8, scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
-                            <div className="w-full flex justify-between">
-                                <div className="flex justify-center items-center size-9 rounded-full border border-white/5">
-                                    <FaGithub size={20} className="text-text-muted" />
-                                </div>
-                                <div className={`flex items-center justify-center size-8 rounded-full ${isHovered === repo.id ? 'bg-primary-hover' : 'bg-white/4'} transition-all duration-300`}>
+                            <Link
+                                className={`w-[276px] h-[148px] flex flex-col gap-6 rounded-lg  p-3  border-2 ${isHovered === repo.id ? 'border-primary-hover bg-primary-hover/10' : 'border-border bg-card/85'}`}
+                                onMouseEnter={() => setIsHovered(repo.id)}
+                                onMouseLeave={() => setIsHovered(null)}
+                                href={`/story/${repo.id}`}
+                            >
+                                <div className="w-full flex justify-between">
+                                    <div className="flex justify-center items-center size-9 rounded-full border border-white/5">
+                                        <FaGithub size={20} className="text-text-muted" />
+                                    </div>
+                                    <div className={`flex items-center justify-center size-8 rounded-full ${isHovered === repo.id ? 'bg-primary-hover' : 'bg-white/4'} transition-all duration-300`}>
                                         <FaArrowRight
                                             size={20}
                                             className="text-text-muted"
                                         />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <p className="text-text font-geist font-normal text-lg">
-                                {repo.name}
-                            </p>
+                                <p className="text-text font-geist font-normal text-lg">
+                                    {repo.name}
+                                </p>
 
-                        </Link>
+                            </Link>
+                        </motion.div>
                     ))}
                 </div>
 

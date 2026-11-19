@@ -15,9 +15,12 @@ import { GoDatabase } from "react-icons/go";
 import { FaCode } from "react-icons/fa6";
 import { FaCodeBranch } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
-import StoryOverview from "@/modules/storyOverview";
+import StoryOverview from "@/components/storyOverview";
 import ContributorsComponent from "@/components/ContributorsComponent";
 import CommitsComponent from "@/components/CommitsComponent";
+import CodeComponent from "@/components/CodeComponent";
+import CodeSnapshot from "@/components/CodeComponent";
+import StoryFooter from "@/components/StoryFooter";
 
 interface Step {
     id: string
@@ -103,7 +106,7 @@ export default function StoryPage() {
 
                 const commitsPromise = getCommitsById(token, id)
                     .then(async (data) => {
-                        await delay(2000)
+                        await delay(1000)
                         updateStep('commits', 'done')
                         return data
                     })
@@ -153,7 +156,7 @@ export default function StoryPage() {
             {loading ? (
                 <Loader steps={steps}/>
             ) : (
-                <div className="flex flex-col py-20 px-32">
+                <div className="flex flex-col justify-center py-6 px-4 md:py-10 md:px-10 lg:px-32">
                     <StoryOverview
                         id={repo.id}
                         repositoryName={repo.full_name}
@@ -162,23 +165,18 @@ export default function StoryPage() {
                         commits={commits.length}
                         contributors={contributors.length}
                         languages={languages}
-
+                        months={months}
                     />
                     <CommitsComponent commits={commits} months={months}/>
-                    <ContributorsComponent contributors={contributors} contributorsCount={contributors.length} />
-                    {/*<p className="mb-1">*/}
-                    {/*    <b>Название:</b> {repo.full_name}*/}
-                    {/*</p>*/}
-
-                    {/*<p className="mb-1">*/}
-                    {/*    <b>Звёзды:</b> {repo.stargazers_count}*/}
-                    {/*</p>*/}
-
-                    {/*<p className="mb-4">*/}
-                    {/*    <b>Описание:</b> {repo.description || '—'}*/}
-                    {/*</p>*/}
-
-                    {/*<h2 className="text-xl mb-2">Языки:</h2>*/}
+                    <CodeSnapshot
+                        token={token}
+                        owner={repo?.owner?.login}
+                        repo={repo?.name}
+                        defaultBranch={repo?.default_branch}
+                        mainLanguage={languages?.[0]?.language}
+                    />
+                    <ContributorsComponent contributors={contributors} contributorsCount={contributors.length} months={months}/>
+                    <StoryFooter name={repo.full_name} commitsNumber={commits.length} long={months} />
                 </div>
             )}
 

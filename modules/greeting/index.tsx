@@ -52,9 +52,6 @@ const Greeting = () => {
                                 </div>
                             </Button>
                         ) : (<></>)}
-                        <Button variant={"outline"} size={"large"}>
-                            <Link href="#">Live Demo</Link>
-                        </Button>
                     </div>
 
                     <span className="text-text-muted font-jetbrains text-xl">

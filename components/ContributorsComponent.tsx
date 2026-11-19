@@ -5,6 +5,7 @@ import {MdOutlineArrowOutward} from "react-icons/md";
 interface ContributorsProps {
     contributors: Array<any>;
     contributorsCount: number;
+    months: number;
 }
 
 const ContributorsComponent = (data:ContributorsProps) => {
@@ -13,7 +14,7 @@ const ContributorsComponent = (data:ContributorsProps) => {
             <div className="flex flex-col gap-3 mt-4">
                 <h1 className="font-geist font-semibold text-[28px] leading-9">The Builders</h1>
                 <p className="text-text-secondary font-geist text-lg">
-                    Crafted with care by {data.contributorsCount} developers over Х months of indie building.
+                    Crafted with care by {data.contributorsCount} developers over {data.months} months of indie building.
                 </p>
             </div>
             <div className="flex flex-wrap gap-4">
