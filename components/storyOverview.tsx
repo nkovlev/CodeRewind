@@ -4,7 +4,7 @@ import React from 'react';
 import {AiFillStar} from "react-icons/ai";
 import {RiGitCommitLine} from "react-icons/ri";
 import {FiUsers} from "react-icons/fi";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {Button} from "@/components/ui/button";
 import {CiShare2} from "react-icons/ci";
 import {MdOutlineFileDownload} from "react-icons/md";
@@ -62,15 +62,15 @@ const StoryOverview = (data: StoryOverviewProps) => {
     ];
     const LanguagesData = data.languages;
 
-    const titleAnimation = {
+    const titleAnimation: Variants = {
         hidden: { opacity: 0, y: 24 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     }
-    const container = {
+    const container: Variants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
     }
-    const card = {
+    const card: Variants = {
         hidden: { opacity: 0, y: 24, scale: 0.97 },
         visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
     }
