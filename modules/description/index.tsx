@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeComponent from "@/components/CodeComponent";
+import CodeComponent from "@/components/CodeSnapshot";
 
 const Description = () => {
     return (

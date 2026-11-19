@@ -18,8 +18,7 @@ import { FiUsers } from "react-icons/fi";
 import StoryOverview from "@/components/storyOverview";
 import ContributorsComponent from "@/components/ContributorsComponent";
 import CommitsComponent from "@/components/CommitsComponent";
-import CodeComponent from "@/components/CodeComponent";
-import CodeSnapshot from "@/components/CodeComponent";
+import CodeSnapshot from "@/components/CodeSnapshot";
 import StoryFooter from "@/components/StoryFooter";
 
 interface Step {
