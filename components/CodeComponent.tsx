@@ -6,7 +6,7 @@ import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { MdLaptopChromebook } from "react-icons/md";
 
 type Props = {
-    token: string
+    token: string | null
     owner: string
     repo: string
     defaultBranch?: string
