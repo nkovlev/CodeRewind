@@ -8,6 +8,7 @@ import { motion, type Variants } from "framer-motion";
 import {Button} from "@/components/ui/button";
 import {CiShare2} from "react-icons/ci";
 import {MdOutlineFileDownload} from "react-icons/md";
+import { IoMdTime } from "react-icons/io";
 import Link from "next/link";
 
 interface StoryOverviewProps {
@@ -59,7 +60,7 @@ const StoryOverview = (data: StoryOverviewProps) => {
             sublabel: "Active Authors"
         },
         {
-            icon: FiUsers,
+            icon: IoMdTime,
             iconBackground: 'bg-chart-blue',
             label: "Timeline",
             value: data.months,
@@ -143,8 +144,8 @@ const StoryOverview = (data: StoryOverviewProps) => {
                             <span className="truncate font-jetbrains font-medium text-[12px] leading-[15px] md:text-[14px] md:leading-[17px] text-text-muted uppercase">
                                 {badge.label}
                             </span>
-                            <div className="size-[30px] shrink-0 flex items-center justify-center border-2 border-chart-blue/20 bg-chart-blue rounded-lg">
-                                <badge.icon className={`${badge.iconBackground}`} size={20} />
+                            <div className={`size-[30px] shrink-0 flex items-center justify-center border-2 border-chart-blue/20 ${badge.iconBackground} rounded-lg`}>
+                                <badge.icon size={20} />
                             </div>
                         </div>
                         <span className="font-geist text-[24px] leading-8 md:text-[28px] md:leading-9">
