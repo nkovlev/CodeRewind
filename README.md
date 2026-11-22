@@ -2,6 +2,8 @@
 
 **Visual storytelling for GitHub repositories.**
 
+🔗 **Live Demo:** [https://code-rewind-pink.vercel.app/](https://code-rewind-pink.vercel.app/)
+
 CodeRewind transforms the history of any GitHub repository into a beautiful interactive story.  
 Instead of another analytics dashboard, you get a narrative of how the project evolved — commits, contributors, languages, and key moments.
 
@@ -34,5 +36,3 @@ npm install
 
 # Run the development server
 npm run dev
-
-Deploy: https://code-rewind-pink.vercel.app/
